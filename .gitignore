@@ -1,3 +1,44 @@
-Nothing should be ignored in this case, as only a README.md file was added, which is a source/config file. No build artifacts, dependencies, or temporary files are present in the changes.
+```
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-Therefore, the output is empty.
+# Environment
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Logs
+*.log
+
+# Local config
+.env
+.env.local
+*.env.*
+```

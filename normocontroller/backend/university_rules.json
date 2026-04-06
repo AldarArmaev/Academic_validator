@@ -1,0 +1,31 @@
+{
+  "font": {
+    "family": "Times New Roman",
+    "size_half_points": 28
+  },
+  "paragraph": {
+    "line_spacing_twips": 360,
+    "first_line_indent_dxa": 720,
+    "alignment": "both"
+  },
+  "margins_dxa": {
+    "left": 1701,
+    "right": 567,
+    "top": 1134,
+    "bottom": 1134
+  },
+  "required_sections": [
+    "введение",
+    "заключение",
+    "список литературы"
+  ],
+  "citation_pattern": "\\[\\d+,?\\s*с\\.\\s*\\d+\\]",
+  "stop_words_style": [
+    "я ",
+    "мы ",
+    "мне ",
+    "нам ",
+    "мой ",
+    "наш "
+  ]
+}
