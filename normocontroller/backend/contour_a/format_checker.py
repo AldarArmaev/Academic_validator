@@ -48,6 +48,50 @@ def check_paragraph_formatting(doc: Document) -> List[ReportError]:
     return errors
 
 
+def check_page_margins(doc: Document) -> List[ReportError]:
+    """Проверка полей страницы."""
+    errors = []
+    margins_config = UNIVERSITY_RULES.get("margins_dxa", {})
+    
+    # Получаем поля документа (если доступны через section properties)
+    for section_idx, section in enumerate(doc.sections):
+        # Проверяем левое поле
+        if hasattr(section, 'left_margin'):
+            left_margin = section.left_margin
+            expected_left = margins_config.get("left", 1701)
+            if left_margin != expected_left:
+                errors.append(ReportError(
+                    id=f"margin_left_{section_idx}",
+                    type="formatting",
+                    severity="error",
+                    location=ErrorLocation(page=section_idx, paragraph_index=0, chapter=None),
+                    fragment="",
+                    rule=f"Левое поле должно быть {expected_left} DXA",
+                    found_value=str(left_margin),
+                    expected_value=str(expected_left),
+                    recommendation=f"Установите левое поле {expected_left} DXA"
+                ))
+        
+        # Проверяем правое поле
+        if hasattr(section, 'right_margin'):
+            right_margin = section.right_margin
+            expected_right = margins_config.get("right", 567)
+            if right_margin != expected_right:
+                errors.append(ReportError(
+                    id=f"margin_right_{section_idx}",
+                    type="formatting",
+                    severity="error",
+                    location=ErrorLocation(page=section_idx, paragraph_index=0, chapter=None),
+                    fragment="",
+                    rule=f"Правое поле должно быть {expected_right} DXA",
+                    found_value=str(right_margin),
+                    expected_value=str(expected_right),
+                    recommendation=f"Установите правое поле {expected_right} DXA"
+                ))
+    
+    return errors
+
+
 def check_required_sections(doc: Document) -> List[ReportError]:
     """Проверка наличия обязательных разделов."""
     errors = []
