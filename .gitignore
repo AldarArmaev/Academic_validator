@@ -1,11 +1,61 @@
 ```
 # Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
+*.pyc
+*.pyo
+*.pyd
 .Python
-build/
+env/
+venv/
+.venv/
+.venv*/
+.ENV
+.ENV.*/
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env*.local
+!.env*.development
+!.env*.test
+!.env*.production
+.venv.bak/
+.venv_*/
+.venv-*/*/
+.venv+*/*/
+.venv_*/*/
+.venv.*/*/
+.venv@*/*/
+.venv#*/*/
+.venv%*/*/
+.venv^*/*/
+.venv&*/*/
+.venv**/*/
+.venv~*/*/
+.venv`*/*/
+.venv'*/*/
+.venv"*/*/
+.venv[*/*/
+.venv]*/*/
+.venv{*/*/
+.venv}*/*/
+.venv|*/*/
+.venv\*/*/
+.venv/*/
+.venv?*/*/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.nyc_output/
+coverage/
+.mypy_cache/
+.hypothesis/
+
+# Distribution / packaging
+.Python
+.build/
 develop-eggs/
 dist/
 downloads/
@@ -17,28 +67,30 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Environment
-.venv/
-venv/
-env/
-ENV/
-
-# IDE
+# IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tmp
+*~
 
 # Logs
 *.log
 
-# Local config
-.env
-.env.local
-*.env.*
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Thumbs.db:encryptable
 ```
